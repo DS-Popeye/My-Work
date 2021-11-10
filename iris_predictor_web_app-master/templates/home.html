@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="card text-center mt-5 shadow-lg p-3 mb-5 bg-white rounded" style="width: 36rem;margin: auto;">
+        <div class="card-body">
+            <h1>IRIS PREDICTOR WEB APP</h1>
+            <form method="POST">
+                {# This hidden_tag is a CSRF security feature. #}
+                {{ form.hidden_tag() }}
+                <br>
+                <div class="form-group border p-2 mt-1">
+                    <label for="a1">{{ form.sep_len.label }}</label><br>
+                    <input type="range" id="a1" name="sep_len" min="4.3" max="7.9" value="0" step="0.1" style="width: 100%" class="m-0 p-0">
+                    <small class="form-text text-muted">Length of the sepal (in cm)</small>
+                </div>
+                <div class="form-group border p-2 mt-1">
+                    <label for="a1">{{ form.sep_wid.label }}</label><br>
+                    <input type="range" id="a1" name="sep_wid" min="2" max="4.4" value="0" step="0.1" style="width: 100%" class="m-0 p-0">
+                    <small class="form-text text-muted">Width of the sepal (in cm)</small>
+                </div>
+                <div class="form-group border p-2 mt-1">
+                    <label for="a1">{{ form.pet_len.label }}</label><br>
+                    <input type="range" id="a1" name="pet_len" min="1" max="6.9" value="0" step="0.1" style="width: 100%" class="m-0 p-0">
+                    <small class="form-text text-muted">Length of the petal (in cm)</small>
+                </div>
+                <div class="form-group border p-2 mt-1">
+                    <label for="a1">{{ form.pet_wid.label }}</label><br>
+                    <input type="range" id="a1" name="pet_wid" min="0.1" max="2.5" value="0" step="0.1" style="width: 100%" class="m-0 p-0">
+                    <small class="form-text text-muted">Width of the petal (in cm)</small>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">PREDICTION</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
